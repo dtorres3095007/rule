@@ -1,0 +1,196 @@
+$colorTeal : #3CBBB499;
+$colorYellow : #F9AD1D99;
+$colorWhite : white;
+
+@mixin percentage-bar($bg) {
+    height: 54px;
+    margin: 0px !important;
+    background: $bg;
+}
+
+@mixin tex-percentage-bar() {
+    font-family: Lato;
+    font-size: 27px;
+    font-weight: 400;
+    color: $colorWhite;
+}
+
+
+.container-list{
+    width: 100%;
+    height: 170px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 22.79%, #888888 50%, rgba(51, 51, 51, 0.6) 71.88%);
+    position: relative;
+    z-index: 10014;
+    margin: 15px 0px 15px 0px;
+
+    @media screen and (max-width : 950px) {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 25.79%, #888888 50%, rgba(51, 51, 51, 0.6) 71.88%);
+    }
+    @media screen and (max-width : 880px) {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.0001) 0%, #888888 30.79%, #888888 50%, rgba(51, 51, 51, 0.6) 71.88%);
+    }
+}
+
+.btn-my-vote-list{
+    background-color: $colorTeal;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    padding-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.img-list{
+    height: 170px;
+    width: 267px;
+    margin: 0px !important;
+    z-index: 1001;
+    float: left;
+}
+
+.container-detail-list{
+    width: 100%;
+    position: absolute;
+    left: 230px;
+
+    @media screen and (max-width : 1150px) {
+        left: 210px;
+    }
+
+    @media screen and (max-width : 880px) {
+        left: 190px;
+    }
+
+    @media screen and (max-width : 840px) {
+        left: 175px;
+    }
+}
+
+.container-percentage-list{
+    bottom: 30;
+    margin-top: 116px;
+    position: absolute;
+}
+
+.teal-list{
+    @include percentage-bar($colorTeal);
+    p{
+        @include tex-percentage-bar();
+        margin: 10px 0px 0px 30px;
+    }
+    img{
+        margin-right: 10px;
+    }
+}
+.yellow-list{
+    @include percentage-bar($colorYellow);
+    p{
+        @include tex-percentage-bar();
+        float: right;
+        margin: 10px 30px 0px 0;
+    }
+    img{
+        margin-left: 10px;
+    }
+}
+
+.text-list{
+    color: $colorWhite;
+    z-index: 1001;
+    position: relative;
+    font-family: Lato;
+    width: 47%;
+    margin: 10px 0px 10px 0px;
+
+    p{
+        margin: 0;
+        padding: 0;
+    }
+
+    .name-list{
+        font-size: 30px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .description-list{
+        font-size: 15px;
+        margin-top: 10px;
+
+        @media screen and (max-width : 860px) {
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+        }
+    }
+
+    @media screen and (max-width : 1230px) {
+        width: 43%;
+    }
+    @media screen and (max-width : 960px) {
+        width: 40%;
+    }
+    @media screen and (max-width : 854px) {
+        width: 37%;
+    }
+
+    @media screen and (max-width : 780px) {
+        width: 37%;
+    }
+}
+
+.buttons-list{
+    position: relative;
+    z-index: 1001;
+    text-align: center;
+    color: $colorWhite;
+    font-family: Lato;
+    width: 33%;
+    margin: 10px 0px 10px 0px;
+
+    p{
+        font-family: Lato;
+        font-size: 15px;
+    }
+    
+    button{
+        border: none;
+        height: 45px;
+        margin-left: 10px;
+    }
+    
+    .btn-like-list{
+        background-color: $colorTeal;
+        width: 45px;
+    }
+    
+    .btn-not-like-list{
+        background-color: $colorYellow;
+        width: 45px;
+      
+    }
+
+    .btn-vote-now-list{
+        width: 135px;
+        background: rgba(48, 48, 48, 0.6);
+        border: 1px solid $colorWhite;
+        color: $colorWhite;  
+        font-size: 18px;
+        padding-top: 10px;
+        p{
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+
+    @media screen and (max-width : 960px) {
+        width: 35%;
+    }
+    @media screen and (max-width : 854px) {
+        width: 40%;
+    }
+}

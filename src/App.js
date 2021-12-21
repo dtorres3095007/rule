@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/styles/scss/styles.scss'
+import Todo from './components/Todo'
+import Cards from './components/Cards'
+import Celebrities from './containers/Celebrities'
 
 function App() {
+  const todos = [
+    {id : 1, title : 'Wash dishes', completed : false},
+    {id : 2, title : 'Make dinner', completed : true},
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Celebrities/>
     </div>
   );
 }

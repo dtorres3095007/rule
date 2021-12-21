@@ -1,0 +1,61 @@
+
+$map: (
+    xl: 1200px,
+    lg: 992px,
+    md: 768px,
+    sm: 620px,
+    xm: 576px,
+);
+
+
+.container{
+    width: 100%;
+}
+
+@for $i from 1 through 20{
+    .cols-#{$i * 5}{
+        width: $i * 5%;
+        float: left;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width : map-get($map, xl)) {
+    @for $i from 1 through 20{
+        .cols-xl-#{$i * 5}{
+            width: $i * 5% ;
+        }
+    }
+}
+
+@media screen and (max-width : map-get($map, lg)) {
+    @for $i from 1 through 20{
+        .cols-lg-#{$i * 5}{
+            width: $i * 5% ;
+        }
+    }
+}
+
+@media screen and (max-width : map-get($map, md)) {
+    @for $i from 1 through 20{
+        .cols-md-#{$i * 5}{
+            width: $i * 5% ;
+        }
+    }
+}
+
+@media screen and (max-width : map-get($map, sm)) {
+    @for $i from 1 through 20{
+        .cols-sm-#{$i * 5}{
+            width: $i * 5% ;
+        }
+    }
+}
+
+@media screen and (max-width : map-get($map, xm)) {
+    @for $i from 1 through 20{
+        .cols-xm-#{$i * 5}{
+            width: $i * 5% ;
+        }
+    }
+}
