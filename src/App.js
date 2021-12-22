@@ -1,6 +1,4 @@
 import './assets/styles/scss/styles.scss'
-import Todo from './components/Todo'
-import Cards from './components/Cards'
 import Celebrities from './containers/Celebrities'
 
 function App() {

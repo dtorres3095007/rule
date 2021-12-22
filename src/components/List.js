@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment';
 import like from '../assets/img/like.png'
 import notLike from '../assets/img/not-like.png'
-import { useWindowDimensions, cutText } from '../assets/js/General'
+import { useWindowDimensions, cutTextDescriptionList } from '../assets/js/General'
 
 
 
@@ -17,7 +17,7 @@ export default function List({ picture, name, description, lastUpdated, category
                 <div className='container-detail-list'>
                     <div className='text-list cols-40'>
                         <p className='name-list'>{name}</p>
-                        <p className='description-list'>{cutText(width,description)}</p>
+                        <p className='description-list'>{cutTextDescriptionList(width,description)}</p>
                     </div>
                     <div className='buttons-list cols-35'>
                         <p className='category-list'>{`${moment(lastUpdated, "YYYYMMDD").fromNow()} in ${category}`}</p>

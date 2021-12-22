@@ -1,7 +1,9 @@
 import React from 'react'
 import List from '../components/List'
+import Card from '../components/Card'
 import { celebrities } from '../assets/js/General'
 
+ 
 export default function Celebrities({}){
     return (
         <div className='container-celebrities'>
@@ -34,6 +36,44 @@ export default function Celebrities({}){
                     )
                 })
             }
+        </div>
+    );
+}
+
+ function CelebritiesCard({}){
+    return (
+        <div className='container-celebrities-card'>
+            <div className='container-options-celebrities-card'>
+                <div className='title-celebrities-card'>
+                    <p>Previous Rulings</p>
+                </div>
+                <div className='option-celebrities-card'>
+                    <select>
+                        <option value="List">List</option>
+                        <option value="Grid">Grid</option>
+                    </select>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div className='container-celebrities-card-info'>
+                {
+                    celebrities().map(({name, description, category, picture,picture_card, lastUpdated, votes })=>{
+                        return(
+                            <Card 
+                                picture={picture_card} 
+                                name={name} 
+                                category={category}
+                                lastUpdated={lastUpdated}
+                                description={description}
+                                votes={votes}
+                            />
+
+                        )
+                    })
+                }
+            </div>
         </div>
     );
 }
