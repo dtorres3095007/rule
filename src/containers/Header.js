@@ -1,27 +1,33 @@
 import React from 'react'
-import pope from '../assets/img/pope.png'
+import list from '../assets/img/list.png'
 import search from '../assets/img/search.svg'
-import { useWindowDimensions, cutTextDescriptionList } from '../assets/js/General'
+import CardImportant from '../components/CardImportant';
 
 
 
 export default function Header(){
-    const { width } = useWindowDimensions();
-
     return (
-        <div className='header' style={{ backgroundImage : `url(${pope})`}}>
+        <div className='header'>
             <div className='header-menu'>
                 <div className='header-title'>
                     <p>Rule of thumb</p>
                 </div>
                 <div className='header-option'>
-                    <ul>
-                        <li>Past Trials</li>
-                        <li>How It Works</li>
-                        <li>Login / Sign Up</li>
-                        <li><img src={search} alt='Search Info'/></li>
-                    </ul>
+                    <div className='header-option-desktop'>
+                        <ul>
+                            <li>Past Trials</li>
+                            <li>How It Works</li>
+                            <li>Login / Sign Up</li>
+                            <li><img src={search} alt='Search Info'/></li>
+                        </ul>
+                    </div>
+                    <div className='header-option-app'>
+                        <img  src={list} alt='Menu'/>
+                    </div>
                 </div>
+            </div>
+            <div className='header-card'>
+                <CardImportant/>
             </div>
         </div>
     );

@@ -18,7 +18,7 @@
 .container-options-celebrities-card{
     width: 81%;
     margin: 0 auto !important;
-    // padding: 30px 0px 30px 0px;
+    padding: 30px 0px 30px 0px;
     
     div{
        
@@ -93,7 +93,7 @@
 
 .container-options-celebrities{
     width: 100%;
-    // padding: 30px 0px 30px 0px;
+    padding: 30px 0px 30px 0px;
     
     div{
        
@@ -122,11 +122,17 @@
         height: 60px;
         padding-top: 10px;
         text-align: right;
+        
         select{
             width: 173px !important ;
             padding: 5px;
             font-size: 20px;
             margin: 0;
+
+            @media screen and (max-width :768px) {
+                display: none;
+            }
+            
 
         }
 
