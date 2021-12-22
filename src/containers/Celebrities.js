@@ -22,6 +22,13 @@ export default function Celebrities(){
  function CelebritiesList({changeTypeList, typeList}){
     return (
         <div className='container-celebrities'>
+            <div className='container-text-celebrities'>
+                <div className='first-text-celebrities'>
+                Speak out. Be heard.<br/><b>Be counted</b>
+                </div>
+                <div className='second-text-celebrities'> Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</div>
+                <div className='close-text-celebrities'><b>X</b></div>
+            </div>
             <div className='container-options-celebrities'>
                 <div className='title-celebrities'>
                     <p>Previous Rulings</p>

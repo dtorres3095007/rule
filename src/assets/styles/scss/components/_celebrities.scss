@@ -15,6 +15,102 @@
     }
 }
 
+.container-text-celebrities{
+    margin-top: 30px;
+    background: #EBEBEB;
+    height: 50px;
+    font-family: Lato;
+    font-size: 18px;
+    text-align: left;
+    color: #464646;
+    padding: 20px;
+
+    .first-text-celebrities{
+        width: 20%;
+        float: left;
+
+        b{
+            font-size: 27px; 
+        }
+    }
+    .second-text-celebrities{
+        float: left;
+        width: 77%;
+    }
+    .close-text-celebrities{
+        font-size: 20px;
+        float: left;
+        width: 2%;
+        padding-top: 1%;
+        cursor: pointer;
+        position: relative;
+        top: 10%;
+        left: 20px;
+    }
+
+    @media screen and (max-width : 1300px) {
+        height: 80px;
+    }
+
+    @media screen and (max-width : 1000px) {
+        height: 90px;
+        padding-top: 40px;
+        .first-text-celebrities{
+            font-size: 14px; 
+        }
+        .second-text-celebrities{
+            width: 80%;
+        }
+        .close-text-celebrities{
+        display: none;
+        }
+    }
+
+    @media screen and (max-width : 770px) {
+        .second-text-celebrities{
+            width: 80%;
+            left: 5%;
+            position: relative;
+        }
+        .close-text-celebrities{
+        display: none;
+        }
+    }
+
+    @media screen and (max-width : 750px) {
+
+        height: 150px;
+        padding-top: 40px;
+
+        .first-text-celebrities{
+            width: 35%;
+            padding-top: 40px;
+        }
+        .second-text-celebrities{
+            width: 65%; 
+            left: 0%;
+            position: relative;
+            padding-top: 20px;
+        }
+
+    }
+
+    @media screen and (max-width : 480px) {
+        height: 250px;
+        .first-text-celebrities{
+            width: 40%;
+            padding-top: 40px;
+        }
+
+        .second-text-celebrities{
+            width: 60%;
+            padding-top: 0px;
+        }
+
+    }
+
+}
+
 .container-options-celebrities-card{
     width: 81%;
     margin: 0 auto !important;
@@ -51,6 +147,9 @@
             font-size: 20px;
             margin: 0;
 
+            @media screen and (max-width :760px) {
+                display: none;
+            }
         }
         
     }
@@ -129,7 +228,7 @@
             font-size: 20px;
             margin: 0;
 
-            @media screen and (max-width :768px) {
+            @media screen and (max-width :760px) {
                 display: none;
             }
             

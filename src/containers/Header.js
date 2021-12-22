@@ -11,7 +11,7 @@ export default function Header(){
         <div className='header'>
             <div className='header-menu'>
                 <div className='header-title'>
-                    <p>Rule of thumb</p>
+                    <p>Rule of thumb.</p>
                 </div>
                 <div className='header-option'>
                     <div className='header-option-desktop'>
