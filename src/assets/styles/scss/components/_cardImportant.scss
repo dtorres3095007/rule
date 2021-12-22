@@ -51,7 +51,7 @@ $colorWhiteGrey : #dadada;
 
 .container-percentage-card-important{
     width: 100%;
-    margin-top: 26px;
+    margin-top: 44px;
     height: 82px;
     text-align: center;
 
@@ -88,23 +88,24 @@ $colorWhiteGrey : #dadada;
         img{
             height: 15px!important;
             width: 21px!important;
-            margin-top: 0px !important;
+            margin-top: 15px !important;
         }
     }
 
     .text-card-important{
         font-size: 17px !important; 
+        margin-top: 12px !important;
     }
 
     .end-text-card-important{
-        margin-top: 15px !important;
+        margin-top: 12px !important;
         font-size: 21px !important;
     }
 
     .container-percentage-card-important{
         height: 39px;
         text-align: center;
-    
+        margin-top: 17px;
         img{
             width: 21px;
             height: 21px;
@@ -114,8 +115,8 @@ $colorWhiteGrey : #dadada;
 
 @media screen and (max-width : 582px) {
     .container-card-important{
-        width: 250px;
-        height: 380px;
+        width: 230px;
+        height: 350px;
     }
     .hide-text{
         display: none;
