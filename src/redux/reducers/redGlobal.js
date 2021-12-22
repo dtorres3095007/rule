@@ -3,7 +3,7 @@ import {
 } from "../actions/actGlobal";
 
 const initialState = {
-  typeList: 'list',
+  typeList: 'List',
 }
 
 const reducer = (state = initialState, action) => {

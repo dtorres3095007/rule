@@ -2,9 +2,24 @@ import React from 'react'
 import List from '../components/List'
 import Card from '../components/Card'
 import { celebrities } from '../assets/js/General'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { changeTypeList } from "../redux/actions/actGlobal";
  
-export default function Celebrities({}){
+export default function Celebrities(){
+    const typeList = useSelector(state => state.redGlobal.typeList);
+    const dispatch = useDispatch()
+    
+    if(typeList == 'List'){
+        return <CelebritiesList typeList='List' changeTypeList={(item)=> dispatch(changeTypeList(item))}/>;
+    }else{
+        return <CelebritiesCard typeList='Card' changeTypeList={(item)=> dispatch(changeTypeList(item))}/>;
+
+    }
+}
+
+
+
+ function CelebritiesList({changeTypeList, typeList}){
     return (
         <div className='container-celebrities'>
             <div className='container-options-celebrities'>
@@ -12,9 +27,10 @@ export default function Celebrities({}){
                     <p>Previous Rulings</p>
                 </div>
                 <div className='option-celebrities'>
-                    <select>
+                    <select value={typeList} onChange={(event)=>changeTypeList(event.target.value)}>
                         <option value="List">List</option>
-                        <option value="Grid">Grid</option>
+                        <option value="Card">Grid</option>
+
                     </select>
                 </div>
             </div>
@@ -40,7 +56,7 @@ export default function Celebrities({}){
     );
 }
 
- function CelebritiesCard({}){
+ function CelebritiesCard({changeTypeList, typeList}){
     return (
         <div className='container-celebrities-card'>
             <div className='container-options-celebrities-card'>
@@ -48,9 +64,9 @@ export default function Celebrities({}){
                     <p>Previous Rulings</p>
                 </div>
                 <div className='option-celebrities-card'>
-                    <select>
+                    <select value={typeList} onChange={(event)=>changeTypeList(event.target.value)}>
                         <option value="List">List</option>
-                        <option value="Grid">Grid</option>
+                        <option value="Card">Grid</option>
                     </select>
                 </div>
             </div>

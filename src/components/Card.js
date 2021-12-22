@@ -11,6 +11,7 @@ export default function Card({ picture, name, description, lastUpdated, category
 
     return (
         <div className='container-card' style={{ backgroundImage :  `url(${picture})`}}>
+            <span className='btn-my-vote-card'><img src={like} alt='Image like List' /></span>
             <div className='container-detail-card'>
                 <div className='text-card'>
                     <p className='name-card'>{cutText(width,name,21)}</p>

@@ -1,4 +1,6 @@
 import './assets/styles/scss/styles.scss'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 import Celebrities from './containers/Celebrities'
 
 function App() {
@@ -7,9 +9,9 @@ function App() {
     {id : 2, title : 'Make dinner', completed : true},
   ];
   return (
-    <div>
+    <Provider store={store}>
       <Celebrities/>
-    </div>
+    </Provider>
   );
 }
 
