@@ -21,12 +21,12 @@ export default function List({ picture, name, description, lastUpdated, category
                 setOpinion('');
                 setVoteSend(false);
                 setVote(null);
-                setPercentage(getPercentage(votes,''));
+                setPercentage(getPercentage(votes,id));
             });
         }else if(vote){
             addVote(vote.id, vote.opinion, ()=>{
             setVoteSend(true);
-            setPercentage(getPercentage(votes,vote.opinion));
+            setPercentage(getPercentage(votes,id));
             })
         }
     }
@@ -34,7 +34,7 @@ export default function List({ picture, name, description, lastUpdated, category
     useEffect(() => {
         verifyVote(id,(opinion)=>{
             setOpinion(opinion);
-            setPercentage(getPercentage(votes, opinion));
+            setPercentage(getPercentage(votes, id));
             }
         );
       },[]);

@@ -152,18 +152,20 @@ export async function verifyVote(celebriteId, callback = ()=>{}){
     callback(exist ? exist.opinion : '');
     return exist;
 }
+
 export  function restarOpinion(celebriteId, callback = ()=>{}){
-    const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
-    for (let index = 0; index < opinions.length; index++) {
-        const element = opinions[index];
-        if(element.celebriteId == celebriteId) {
-            opinions.splice(index,1);
-            localStorage.setItem("data_adds", JSON.stringify(opinions));
-            const opinions2 = JSON.parse(localStorage.getItem("data_adds") || "[]");
-            callback();
-            break;
-        }
-    }
+    callback();
+    // const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    // for (let index = 0; index < opinions.length; index++) {
+    //     const element = opinions[index];
+    //     if(element.celebriteId == celebriteId) {
+    //         opinions.splice(index,1);
+    //         localStorage.setItem("data_adds", JSON.stringify(opinions));
+    //         const opinions2 = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    //         callback();
+    //         break;
+    //     }
+    // }
   
 }
 
@@ -178,11 +180,25 @@ export const opinionPeople = (votes, myOpinion) => {
     else return 'like';
 } 
 
-export const getPercentage = (votes, myOpinion) => {
+
+const countVotesOpinion =  (celebriteId)=>{
     const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    let positiveOpi = 0;
+    let negativeOp = 0;
+     opinions.map((e)=>{
+        if(e.celebriteId == celebriteId){
+            if(e.opinion == 'like')positiveOpi++;
+            if(e.opinion == 'not-like')negativeOp++;
+        }
+    })
+    return {positiveOpi, negativeOp}
+} 
+export const getPercentage =  (votes, celebriteId) => {
+    const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    let {positiveOpi, negativeOp} = countVotesOpinion(celebriteId);
     let {positive, negative} = votes;
-    positive = positive + (myOpinion == 'like' ? 1 : 0);
-    negative = negative + (myOpinion == 'not-like' ? 1 : 0);
+    positive = positive + positiveOpi;
+    negative = negative + negativeOp;
     let total = positive + negative;
     let totalPos = Math.round((positive * 100) / total);
     let totalNeg = Math.round((negative * 100) / total);
