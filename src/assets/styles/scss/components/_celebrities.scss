@@ -111,87 +111,16 @@
 
 }
 
-.container-options-celebrities-card{
-    width: 100%;
-    margin: 0 auto !important;
-    padding: 30px 0px 30px 0px;
-    
-    div{
-       
-        float: left;
-        // margin-bottom: 30px;
-    }
-
-    .title-celebrities-card{
-        width: 50%;
-        font-family: Lato;
-        font-size: 45px;
-        color: #464646;
-        height: 60px;
-
-        p{
-            margin: 0;
-            padding: 0;
-        }
-
-    }
-
-    .option-celebrities-card{
-        width: 50%;
-        height: 60px;
-        padding-top: 10px;
-        text-align: right;
-        select{
-            width: 173px !important ;
-            padding: 5px;
-            font-size: 20px;
-            margin: 0;
-
-            @media screen and (max-width :760px) {
-                display: none;
-            }
-        }
-        
-    }
-    
-    // @media screen and (max-width : 1230px) {
-    //     width: 800px;
-    // }
-
-    // @media screen and (max-width : 866px) {
-    //     width: 92%;
-    // }
-    
-}
-
 .container-celebrities-card-info{
     margin: 0 auto !important;
     width: 110% !important;
     position: relative;
     right: 15px;
-    // .container-celebrities-elements{
-    //     width: 1200px;
-    //     margin: 0 auto !important;
-    // }
-
 
     @media screen and (max-width : 1350px) {
         width: 100% !important;
     }
 
-    // @media screen and (max-width : 1300px) {
-    //     width: 90%;
-    // }
-    // @media screen and (max-width : 1230px) {
-    //     width: 750px;
-    // }
-
-    // @media screen and (max-width : 866px) {
-    //     width: 90%;
-    // }
-    // @media screen and (max-width : 820px) {
-    //     width: 95%;
-    // }
     @media screen and (max-width : 770px) {
         right: 8px;
     }
@@ -204,7 +133,6 @@
     div{
        
         float: left;
-        // margin-bottom: 30px;
     }
 
     .title-celebrities{
@@ -221,6 +149,11 @@
         @media screen and (max-width : 860px) {
             width: 70%;
         }
+        @media screen and (max-width : 760px) {
+            width: 100%;
+            font-size: 24px;
+            height: 0px;
+        }
 
     }
     .option-celebrities{
@@ -235,7 +168,7 @@
             font-size: 20px;
             margin: 0;
 
-            @media screen and (max-width :760px) {
+            @media screen and (max-width :767px) {
                 display: none;
             }
             
@@ -248,3 +181,6 @@
         
     }
 }
+.carousel-container {
+    width: 100% !important;
+   }
