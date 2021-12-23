@@ -1,21 +1,4 @@
-.container-celebrities{
-    width: 80%;
-    margin: 0 auto;
-    
-
-    @media screen and (max-width : 1042px) {
-        width: 85%;
-    }
-
-    @media screen and (max-width : 990px) {
-        width: 92%;
-    }
-    @media screen and (max-width : 832px) {
-        width: 95%;
-    }
-}
-
-.container-celebrities-card{
+.container-celebrities, .container-celebrities-card{
     width: 80%;
     margin: 0 auto;
     
@@ -129,7 +112,7 @@
 }
 
 .container-options-celebrities-card{
-    width: 81%;
+    width: 100%;
     margin: 0 auto !important;
     padding: 30px 0px 30px 0px;
     
@@ -171,39 +154,46 @@
         
     }
     
-    @media screen and (max-width : 1230px) {
-        width: 800px;
-    }
+    // @media screen and (max-width : 1230px) {
+    //     width: 800px;
+    // }
 
-    @media screen and (max-width : 866px) {
-        width: 92%;
-    }
+    // @media screen and (max-width : 866px) {
+    //     width: 92%;
+    // }
     
 }
 
 .container-celebrities-card-info{
     margin: 0 auto !important;
-    width: 100%;
+    width: 110% !important;
+    position: relative;
+    right: 15px;
+    // .container-celebrities-elements{
+    //     width: 1200px;
+    //     margin: 0 auto !important;
+    // }
 
-    @media screen and (max-width : 1400px) {
-        width: 85%;
+
+    @media screen and (max-width : 1350px) {
+        width: 100% !important;
     }
 
-    @media screen and (max-width : 1300px) {
-        width: 90%;
-    }
-    @media screen and (max-width : 1230px) {
-        width: 750px;
-    }
+    // @media screen and (max-width : 1300px) {
+    //     width: 90%;
+    // }
+    // @media screen and (max-width : 1230px) {
+    //     width: 750px;
+    // }
 
-    @media screen and (max-width : 866px) {
-        width: 90%;
-    }
-    @media screen and (max-width : 820px) {
-        width: 95%;
-    }
-    @media screen and (max-width : 780px) {
-        width: 98%;
+    // @media screen and (max-width : 866px) {
+    //     width: 90%;
+    // }
+    // @media screen and (max-width : 820px) {
+    //     width: 95%;
+    // }
+    @media screen and (max-width : 770px) {
+        right: 8px;
     }
 }
 

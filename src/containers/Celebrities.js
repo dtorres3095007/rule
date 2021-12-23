@@ -17,18 +17,22 @@ export default function Celebrities(){
     }
 }
 
-
+const Description = ()=>{
+    return (
+        <div className='container-text-celebrities'>
+            <div className='first-text-celebrities'>
+                Speak out. Be heard.<br/><b>Be counted</b>
+            </div>
+            <div className='second-text-celebrities'> Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</div>
+            <div className='close-text-celebrities'><b>X</b></div>
+        </div>
+    )
+}
 
  function CelebritiesList({changeTypeList, typeList}){
     return (
         <div className='container-celebrities'>
-            <div className='container-text-celebrities'>
-                <div className='first-text-celebrities'>
-                Speak out. Be heard.<br/><b>Be counted</b>
-                </div>
-                <div className='second-text-celebrities'> Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.</div>
-                <div className='close-text-celebrities'><b>X</b></div>
-            </div>
+            <Description/>
             <div className='container-options-celebrities'>
                 <div className='title-celebrities'>
                     <p>Previous Rulings</p>
@@ -66,6 +70,7 @@ export default function Celebrities(){
  function CelebritiesCard({changeTypeList, typeList}){
     return (
         <div className='container-celebrities-card'>
+            <Description/>
             <div className='container-options-celebrities-card'>
                 <div className='title-celebrities-card'>
                     <p>Previous Rulings</p>
@@ -81,6 +86,7 @@ export default function Celebrities(){
             <br/>
             <br/>
             <div className='container-celebrities-card-info'>
+                <div className='container-celebrities-elements'>
                 {
                     celebrities().map(({name, description, category, picture,picture_card, lastUpdated, votes })=>{
                         return(
@@ -96,6 +102,7 @@ export default function Celebrities(){
                         )
                     })
                 }
+                </div>
             </div>
         </div>
     );
