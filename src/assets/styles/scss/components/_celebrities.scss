@@ -1,4 +1,4 @@
-.container-celebrities, .container-celebrities-card{
+.container-celebrities{
     width: 80%;
     margin: 0 auto;
     
@@ -13,6 +13,23 @@
     @media screen and (max-width : 832px) {
         width: 95%;
     }
+}
+
+.container-celebrities-card{
+    width: 83%;
+    margin: 0 auto;
+    
+    @media screen and (max-width : 1318px) {
+        width: 85%;
+    }
+    @media screen and (max-width : 1268px) {
+        width: 87%;
+    }
+    @media screen and (max-width : 1218px) {
+        width: 95%;
+    }
+
+
 }
 
 .container-text-celebrities{
@@ -113,16 +130,21 @@
 
 .container-celebrities-card-info{
     margin: 0 auto !important;
-    width: 110% !important;
+    width: 1200px !important;
     position: relative;
-    right: 15px;
+    right: 20px;
 
-    @media screen and (max-width : 1350px) {
-        width: 100% !important;
+    @media screen and (max-width : 1272px) {
+        width: 1095px !important;
+        // right: 5px;
+    }
+    @media screen and (max-width : 1153px) {
+        width: 750px !important;
+        right: 5px;
     }
 
     @media screen and (max-width : 770px) {
-        right: 8px;
+        // right: 8px;
     }
 }
 

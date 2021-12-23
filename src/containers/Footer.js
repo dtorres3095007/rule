@@ -1,11 +1,14 @@
 import React from 'react'
 import facebook from '../assets/img/facebook.png'
 import twitter from '../assets/img/twitter.png'
+import { useSelector } from 'react-redux';
 
 
 export default function Footer(){
+    const typeList = useSelector(state => state.redGlobal.typeList);
+
     return (
-        <div className='footer'>
+        <div className={`footer ${typeList == 'List' ? 'footer-list' : 'footer-card'}`}>
             <div className='footer-image'>
                 <div className='footer-text'>
                     Is there anyone else you would want us to add?

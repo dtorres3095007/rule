@@ -3,8 +3,8 @@ import List from '../components/List'
 import Card from '../components/Card'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { celebrities,useWindowDimensions  } from '../assets/js/General'
-import { useSelector, useDispatch } from 'react-redux'
+import { celebrities,useWindowDimensions  } from '../assets/js/General';
+import { useSelector, useDispatch } from 'react-redux';
 import { changeTypeList } from "../redux/actions/actGlobal";
  
 export default function Celebrities(){
