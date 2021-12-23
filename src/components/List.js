@@ -1,37 +1,72 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import like from '../assets/img/like.png'
 import notLike from '../assets/img/not-like.png'
-import { useWindowDimensions, cutTextDescriptionList } from '../assets/js/General'
+import { useWindowDimensions, cutTextDescriptionList, addVote, verifyVote, addClass, restarOpinion, opinionPeople ,getPercentage} from '../assets/js/General'
 
 
 
-export default function List({ picture, name, description, lastUpdated, category, votes }){
+export default function List({ picture, name, description, lastUpdated, category, votes, id }){
     const { width } = useWindowDimensions();
+    const [vote, setVote] = useState(null);
+    const [percentage, setPercentage] = useState(null);
+    const [voteSend, setVoteSend] = useState(false);
+    const [opinion, setOpinion] = useState('');
+
+    const opinionCheck = () => opinion || voteSend ; 
+    
+    const sendOpinion = ()=> {
+        if(opinionCheck()) {
+            restarOpinion(id, ()=>{
+                setOpinion('');
+                setVoteSend(false);
+                setVote(null);
+                setPercentage(getPercentage(votes,''));
+            });
+        }else if(vote){
+            addVote(vote.id, vote.opinion, ()=>{
+            setVoteSend(true);
+            setPercentage(getPercentage(votes,vote.opinion));
+            })
+        }
+    }
+
+    useEffect(() => {
+        verifyVote(id,(opinion)=>{
+            console.log("opoiiiis",opinion);
+            setOpinion(opinion);
+            setPercentage(getPercentage(votes, opinion));
+            }
+        );
+      },[]);
 
     return (
         <div>
             <img src={picture} alt='Image List' className='img-list'/>
             <div className='container-list'>
-            <span className='btn-my-vote-list'><img src={like} alt='Image like List' /></span>
+            <span className={`btn-my-vote-list-${opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')}`}><img src={like} alt='Image like List' /></span>
                 <div className='container-detail-list'>
                     <div className='text-list cols-40'>
                         <p className='name-list'>{name}</p>
                         <p className='description-list'>{cutTextDescriptionList(width,description)}</p>
                     </div>
                     <div className='buttons-list cols-35'>
-                        <p className='category-list'>{`${moment(lastUpdated, "YYYYMMDD").fromNow()} in ${category}`}</p>
-                        <button className='btn-like-list'><img src={like} alt='Image like List' /></button>
-                        <button className='btn-not-like-list'><img src={notLike} alt='Image not like List' /></button>
-                        <button className='btn-vote-now-list'><p></p>Vote Now</button>
+                        <p className='category-list'>{!opinionCheck() ? `${moment(lastUpdated, "YYYYMMDD").fromNow()} in ${category}` : 'Thank you for your vote!'}</p>
+                        { !opinionCheck() &&
+                        <>
+                            <button className={`btn-like-list ${addClass('like',vote)}`} onClick={()=> setVote({id,opinion : 'like'})}><img src={like} alt='Image like List' /></button>
+                            <button className={`btn-not-like-list ${addClass('not-like',vote)}`} onClick={()=> setVote({id,opinion : 'not-like'})}><img src={notLike} alt='Image not like List' /></button>
+                        </>
+                        }
+                        <button className={`btn-vote-now-list`}  onClick={()=> sendOpinion() }><p></p>{`${!opinionCheck() ?'Vote Now':'Vote Again'}`}</button>
                     </div>
                 </div>
                 <div className='container container-percentage-list'>
-                    <div className='teal-list cols-50'>
-                        <p><img src={like} alt='Image like List' width='22' height='22'/>{`${votes.positive}%`}</p>
+                    <div className={`teal-list ${percentage ? `cols-percentage-${percentage.positive}` : 'cols-50'}`}>
+                        <p><img src={like} alt='Image like List' width='22' height='22'/>{`${percentage && percentage.positive}%`}</p>
                     </div>
-                    <div className='yellow-list cols-50'>
-                        <p>{`${votes.negative}%`}<img src={notLike} alt='Image not like List' width='22' height='22'/></p>
+                    <div className={`yellow-list ${percentage ? `cols-percentage-${percentage.negative}` : 'cols-50'}`}>
+                        <p>{`${percentage && percentage.negative}%`}<img src={notLike} alt='Image not like List' width='22' height='22'/></p>
                     </div>
                 </div>
             </div>

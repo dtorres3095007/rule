@@ -2,6 +2,17 @@ $colorTeal : #3CBBB499;
 $colorYellow : #F9AD1D99;
 $colorWhite : white;
 
+@mixin opinion-people($bg) {
+    background-color: $bg;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    padding-top: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @mixin percentage-bar($bg) {
     height: 54px;
     margin: 0px !important;
@@ -36,15 +47,11 @@ $colorWhite : white;
     }
 }
 
-.btn-my-vote-list{
-    background-color: $colorTeal;
-    width: 45px;
-    height: 45px;
-    text-align: center;
-    padding-top: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
+.btn-my-vote-list-like{
+    @include opinion-people($colorTeal);
+}
+.btn-my-vote-list-not-like{
+    @include opinion-people($colorYellow);
 }
 
 .img-list{

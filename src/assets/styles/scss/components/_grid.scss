@@ -12,6 +12,14 @@ $map: (
     width: 100%;
 }
 
+@for $i from 1 through 100{
+    .cols-percentage-#{$i}{
+        width: $i * 1%;
+        float: left;
+
+    }
+}
+
 @for $i from 1 through 20{
     .cols-#{$i * 5}{
         width: $i * 5%;

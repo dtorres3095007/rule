@@ -6,7 +6,7 @@ import { useWindowDimensions, cutText } from '../assets/js/General'
 
 
 
-export default function Card({ picture, name, description, lastUpdated, category, votes }){
+export default function Card({ picture, name, description, lastUpdated, category, votes, id }){
     const { width } = useWindowDimensions();
 
     return (

@@ -58,7 +58,7 @@ const Description = ({changeTypeList, typeList})=>{
             <br/>
             <br/>
             {
-                celebrities().map(({name, description, category, picture, lastUpdated, votes })=>{
+                celebrities().map(({name, description, category, picture, lastUpdated, votes, id })=>{
                     return(
                         <List 
                             picture={picture} 
@@ -67,6 +67,7 @@ const Description = ({changeTypeList, typeList})=>{
                             lastUpdated={lastUpdated}
                             description={description}
                             votes={votes}
+                            id={id}
                         />
 
                     )
@@ -107,7 +108,7 @@ function CelebritiesCardApp({}){
                 arrows={false}
                 >
                 {
-                    celebrities().map(({name, description, category,picture_card, lastUpdated, votes })=>{
+                    celebrities().map(({name, description, category,picture_card, lastUpdated, votes, id })=>{
                         return(
                             <Card 
                             picture={picture_card} 
@@ -116,6 +117,7 @@ function CelebritiesCardApp({}){
                             lastUpdated={lastUpdated}
                             description={description}
                             votes={votes}
+                            id={id}
                             />)
                         })
                     }
@@ -134,7 +136,7 @@ function CelebritiesCard({changeTypeList, typeList}){
             <div className='container-celebrities-card-info'>
                 <div className='container-celebrities-elements'>
                 {
-                    celebrities().map(({name, description, category,picture_card, lastUpdated, votes })=>{
+                    celebrities().map(({name, description, category,picture_card, lastUpdated, votes, id })=>{
                         return(
                             <Card 
                                 picture={picture_card} 
@@ -143,6 +145,7 @@ function CelebritiesCard({changeTypeList, typeList}){
                                 lastUpdated={lastUpdated}
                                 description={description}
                                 votes={votes}
+                                id={id}
                             />
 
                         )

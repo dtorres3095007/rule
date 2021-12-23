@@ -15,6 +15,7 @@ import mark_card from '../img/mark_card.png'
 export function celebrities (){
     return  [
             {
+                "id" : 1,
                 "name": "Kanye West",
                 "description": "Born in Atlanta and raised in Chicago, West was first known as a producer for Roc-A-Fella Records in the early 2000s, producing singles for several mainstream artists.",
                 "category": "entertainment",
@@ -27,6 +28,7 @@ export function celebrities (){
                 }
             },
             {
+                "id" : 2,
                 "name": "Mark Zuckerberg",
                 "description": "Born in White Plains, New York, Zuckerberg attended Harvard University, where he launched the Facebook social networking service from his dormitory room on February 4, 2004.",
                 "category": "business",
@@ -34,11 +36,12 @@ export function celebrities (){
                 "picture_card": mark_card,
                 "lastUpdated": "2021-02-14T23:10:19.134Z",
                 "votes": {
-                    "positive": 418,
-                    "negative": 324
+                    "positive": 22,
+                    "negative": 22
                 }
             },
             {
+                "id" : 3,
                 "name": "Cristina Fernández de Kirchner",
                 "description": "Her first term of office started with a conflict with the agricultural sector, and her proposed taxation system was rejected.",
                 "category": "politics",
@@ -51,6 +54,7 @@ export function celebrities (){
                 }
             },
             {
+                "id" : 4,
                 "name": "Malala Yousafzai",
                 "description": "The daughter of educational activist Ziauddin, Yousafzai was born to a Pashtun family in Mingora, Khyber Pakhtunkhwa, Pakistan. Her family came to run a chain of schools in the region.",
                 "category": "politics",
@@ -63,6 +67,7 @@ export function celebrities (){
                 }
             },
             {
+                "id" : 5,
                 "name": "Elon Musk",
                 "description": "In 2002, Musk founded SpaceX, an aerospace manufacturer and space transport services company, of which he is CEO, CTO, and lead designer.",
                 "category": "business",
@@ -75,6 +80,7 @@ export function celebrities (){
                 }
             },
             {
+                "id" : 8,
                 "name": "Greta Thumberg",
                 "description": "Thunberg's activism started after convincing her parents to adopt several lifestyle choices to reduce their own carbon footprint.",
                 "category": "environment",
@@ -123,3 +129,66 @@ export function cutTextDescriptionList(width, text){
 export function cutText(width, text, length){
      return text.length > length ? `${text.substr(0,length)}...` : text;
 }
+
+
+
+export function createDataLocalStorage(){
+    const opinions = JSON.parse(localStorage.getItem("data_adds") || "0");
+    // if(opinions==0) localStorage.setItem("data_adds",JSON.stringify([{'celebriteId':-1, 'opinion' : 'like'}])) 
+}
+
+
+export function addVote(celebriteId, opinion, callback = ()=>{}){
+    const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    let vote = {celebriteId,opinion};
+    opinions.push(vote);
+    localStorage.setItem("data_adds", JSON.stringify(opinions));
+    callback(true);
+}
+
+export async function verifyVote(celebriteId, callback = ()=>{}){
+    const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    let exist =  await opinions.find((e)=> e.celebriteId == celebriteId);
+    callback(exist ? exist.opinion : '');
+    return exist;
+}
+export  function restarOpinion(celebriteId, callback = ()=>{}){
+    const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    for (let index = 0; index < opinions.length; index++) {
+        const element = opinions[index];
+        if(element.celebriteId == celebriteId) {
+            opinions.splice(index,1);
+            localStorage.setItem("data_adds", JSON.stringify(opinions));
+            const opinions2 = JSON.parse(localStorage.getItem("data_adds") || "[]");
+            callback();
+            break;
+        }
+    }
+  
+}
+
+export const addClass = (type,vote) => vote && (vote.opinion == type) ? 'border-btn' : '';
+export const addClassOpinion = (type,vote) => vote && (vote.opinion == type) ? 'border-btn' : '';
+
+export const opinionPeople = (votes, myOpinion) => {
+    let {positive, negative} = votes;
+    positive = positive + (myOpinion == 'like' ? 1 : 0);
+    negative = negative + (myOpinion == 'not-like' ? 1 : 0);
+    if(negative > positive) return 'not-like';
+    else return 'like';
+} 
+
+export const getPercentage = (votes, myOpinion) => {
+    const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
+    console.log(opinions);
+    console.log('opinion',myOpinion);
+    console.log('votes',votes);
+    let {positive, negative} = votes;
+    positive = positive + (myOpinion == 'like' ? 1 : 0);
+    negative = negative + (myOpinion == 'not-like' ? 1 : 0);
+    let total = positive + negative;
+    console.log(positive,negative,total);
+    let totalPos = Math.round((positive * 100) / total);
+    let totalNeg = Math.round((negative * 100) / total);
+    return {positive : totalPos, negative : totalNeg}
+} 
