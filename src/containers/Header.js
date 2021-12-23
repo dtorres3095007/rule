@@ -2,7 +2,7 @@ import React from 'react'
 import list from '../assets/img/list.png'
 import search from '../assets/img/search.svg'
 import triangle from '../assets/img/triangle.png'
-import CardImportant from '../components/CardImportant';
+import CardImportant from './CardImportant';
 
 
 

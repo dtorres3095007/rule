@@ -40,7 +40,7 @@ export default function Card({ picture, name, description, lastUpdated, category
       },[]);
       
     return (
-        <div className='container-card' style={{ backgroundImage :  `url(${picture})`}}>
+        <div data-testid={`card-${id}`} className='container-card' style={{ backgroundImage :  `url(${picture})`}}>
             <span className={`btn-my-vote-card-${opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')}`}><img src={opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')== 'like' ? like : notLike} alt='Image like List' /></span>
             <div className='container-detail-card'>
                 <div className='text-card'>

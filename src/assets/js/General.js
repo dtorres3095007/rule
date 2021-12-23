@@ -180,14 +180,10 @@ export const opinionPeople = (votes, myOpinion) => {
 
 export const getPercentage = (votes, myOpinion) => {
     const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
-    console.log(opinions);
-    console.log('opinion',myOpinion);
-    console.log('votes',votes);
     let {positive, negative} = votes;
     positive = positive + (myOpinion == 'like' ? 1 : 0);
     negative = negative + (myOpinion == 'not-like' ? 1 : 0);
     let total = positive + negative;
-    console.log(positive,negative,total);
     let totalPos = Math.round((positive * 100) / total);
     let totalNeg = Math.round((negative * 100) / total);
     return {positive : totalPos, negative : totalNeg}
