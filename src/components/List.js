@@ -33,7 +33,6 @@ export default function List({ picture, name, description, lastUpdated, category
 
     useEffect(() => {
         verifyVote(id,(opinion)=>{
-            console.log("opoiiiis",opinion);
             setOpinion(opinion);
             setPercentage(getPercentage(votes, opinion));
             }
@@ -44,7 +43,7 @@ export default function List({ picture, name, description, lastUpdated, category
         <div>
             <img src={picture} alt='Image List' className='img-list'/>
             <div className='container-list'>
-            <span className={`btn-my-vote-list-${opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')}`}><img src={like} alt='Image like List' /></span>
+            <span className={`btn-my-vote-list-${opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')}`}><img src={opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')== 'like' ? like : notLike} alt='Image like List' /></span>
                 <div className='container-detail-list'>
                     <div className='text-list cols-40'>
                         <p className='name-list'>{name}</p>
@@ -61,7 +60,7 @@ export default function List({ picture, name, description, lastUpdated, category
                         <button className={`btn-vote-now-list`}  onClick={()=> sendOpinion() }><p></p>{`${!opinionCheck() ?'Vote Now':'Vote Again'}`}</button>
                     </div>
                 </div>
-                <div className='container container-percentage-list'>
+                <div className='container container-percentage-list' >
                     <div className={`teal-list ${percentage ? `cols-percentage-${percentage.positive}` : 'cols-50'}`}>
                         <p><img src={like} alt='Image like List' width='22' height='22'/>{`${percentage && percentage.positive}%`}</p>
                     </div>
