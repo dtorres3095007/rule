@@ -15,6 +15,23 @@
     }
 }
 
+.container-celebrities-card{
+    width: 80%;
+    margin: 0 auto;
+    
+
+    @media screen and (max-width : 1042px) {
+        width: 85%;
+    }
+
+    @media screen and (max-width : 990px) {
+        width: 92%;
+    }
+    @media screen and (max-width : 832px) {
+        width: 95%;
+    }
+}
+
 .container-text-celebrities{
     margin-top: 30px;
     background: #EBEBEB;
