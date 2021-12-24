@@ -12,7 +12,7 @@ export default function CardImportant(){
                 <p className='initial-text-card-important'>What’s your opinion on</p>
                 <p className='title-card-important'>Pope Francis?</p>
                 <p className='text-card-important'> He’s talking tough on clergy sexual abuse, or is he just another pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up)</p>
-                <p className='initial-text-card-important hide-text'> <img src={wikipedia} alt='Wikipedia Image'/>More information</p>
+                <p onClick={()=> window.open('https://es.wikipedia.org/wiki/Francisco_(papa)')} className='initial-text-card-important hide-text'> <img src={wikipedia} alt='Wikipedia Image'/>More information</p>
                 <p className='end-text-card-important'> <b>What’s Your Veredict?</b></p>
             </div>
             <div className='container container-percentage-card-important'>

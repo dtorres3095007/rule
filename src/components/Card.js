@@ -55,7 +55,7 @@ export default function Card({ picture, name, description, lastUpdated, category
                             <button className={`btn-not-like-card ${addClass('not-like',vote)}`} onClick={()=> setVote({id,opinion : 'not-like'})}><img src={notLike} alt='Image not like List' /></button>
                         </>
                         }
-                        <button style={{ marginBottom : opinionCheck() && '1px'}} className={`btn-vote-now-card`}  onClick={()=> sendOpinion() }><p></p>{`${!opinionCheck() ?'Vote Now':'Vote Again'}`}</button>
+                        <button style={{ marginBottom : opinionCheck() && '2px'}} className={`btn-vote-now-card`}  onClick={()=> sendOpinion() }><p></p>{`${!opinionCheck() ?'Vote Now':'Vote Again'}`}</button>
                 </div>
                 <div className='container container-percentage-card' >
                 <div className={`teal-card ${percentage ? `cols-percentage-${percentage.positive}` : 'cols-50'}`}>
