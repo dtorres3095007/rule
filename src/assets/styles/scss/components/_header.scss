@@ -56,6 +56,56 @@
     }
 }
 
+.header-menu-app{
+    height: 100%;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    z-index: 10000;
+    display: none;
+    right: 0;
+    
+    @media screen and (max-width : 830px) {
+        display: block;
+    }
+
+    h2{
+        font-family: Lato;
+        color: #FFFFFF; 
+        text-align: center;
+    }
+
+    li{
+        text-decoration: none;
+        list-style: none;
+        margin-top: 15px;
+        font-family: Lato;
+        font-size: 18px;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    img{
+        height: 36px;
+        width: 36px;
+        position: relative;
+        top: 10px;
+
+    }
+    
+    button{
+        margin-top: 10px;
+        text-align: right;
+        width: 100%;
+        border: none;
+        color: white;
+        background-color: transparent;
+        font-size: 23px;
+        
+    }
+
+}
+
 .header-title{
     width: 30%;
     float: left;
