@@ -28,8 +28,8 @@ export default function Footer(){
                 <div className='footer-option-media'>
                     <ul>
                         <li>Follow us</li>
-                        <li><img src={facebook}/></li>
-                        <li><img src={twitter}/></li>
+                        <li><img onClick={()=>window.open('https://web.facebook.com/')}src={facebook}/></li>
+                        <li><img onClick={()=>window.open('https://twitter.com/')} src={twitter}/></li>
                     </ul>
                 </div>
             </div>
