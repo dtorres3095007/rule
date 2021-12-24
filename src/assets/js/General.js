@@ -172,10 +172,11 @@ export  function restarOpinion(celebriteId, callback = ()=>{}){
 export const addClass = (type,vote) => vote && (vote.opinion == type) ? 'border-btn' : '';
 export const addClassOpinion = (type,vote) => vote && (vote.opinion == type) ? 'border-btn' : '';
 
-export const opinionPeople = (votes, myOpinion) => {
+export const opinionPeople = (votes, celebriteId) => {
     let {positive, negative} = votes;
-    positive = positive + (myOpinion == 'like' ? 1 : 0);
-    negative = negative + (myOpinion == 'not-like' ? 1 : 0);
+    let {positiveOpi, negativeOp} = countVotesOpinion(celebriteId);
+    positive = positive + positiveOpi;
+    negative = negative + negativeOp;
     if(negative > positive) return 'not-like';
     else return 'like';
 } 

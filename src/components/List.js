@@ -43,7 +43,7 @@ export default function List({ picture, name, description, lastUpdated, category
         <div data-testid={`list-${id}`}>
             <img src={picture} alt='Image List' className='img-list'/>
             <div className='container-list'>
-            <span className={`btn-my-vote-list-${opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')}`}><img src={opinionPeople(votes, opinionCheck() ? opinion ? opinion : vote.opinion: '')== 'like' ? like : notLike} alt='Image like List' /></span>
+            <span className={`btn-my-vote-list-${opinionPeople(votes, id)}`}><img src={opinionPeople(votes,id)== 'like' ? like : notLike} alt='Image like List' /></span>
                 <div className='container-detail-list'>
                     <div className='text-list cols-40'>
                         <p className='name-list'>{name}</p>

@@ -3,7 +3,7 @@ $colorYellow : #F9AD1D99;
 $colorWhite : white;
 
 @mixin opinion-people($bg) {
-    background-color: $colorTeal;
+    background-color: $bg;
     width: 30px ;
     height: 30px;
     text-align: center;
@@ -34,7 +34,7 @@ $colorWhite : white;
 
 .container-card{
     position: relative;
-    width: 348px;
+    width:31%;
     height: 348px;
     background-size: 100% 100%;
     background-position-x: 100% !important;
@@ -43,10 +43,12 @@ $colorWhite : white;
     margin: 0px 0% 25px 25px;
     float: left;
 
-
-
-    @media screen and (max-width : 1272px) {
-        margin: 0px 0% 20px 16px;
+    @media screen and (max-width : 1340px) {
+        width: 348px;
+        margin: 0px 0% 25px 5px;
+    }
+    @media screen and (max-width : 830px) {
+        margin: 0px 0% 25px 16px;
     }
     
 }
