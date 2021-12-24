@@ -154,19 +154,7 @@ export async function verifyVote(celebriteId, callback = ()=>{}){
 }
 
 export  function restarOpinion(celebriteId, callback = ()=>{}){
-    callback();
-    // const opinions = JSON.parse(localStorage.getItem("data_adds") || "[]");
-    // for (let index = 0; index < opinions.length; index++) {
-    //     const element = opinions[index];
-    //     if(element.celebriteId == celebriteId) {
-    //         opinions.splice(index,1);
-    //         localStorage.setItem("data_adds", JSON.stringify(opinions));
-    //         const opinions2 = JSON.parse(localStorage.getItem("data_adds") || "[]");
-    //         callback();
-    //         break;
-    //     }
-    // }
-  
+    callback();  
 }
 
 export const addClass = (type,vote) => vote && (vote.opinion == type) ? 'border-btn' : '';

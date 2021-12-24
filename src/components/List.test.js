@@ -34,11 +34,9 @@ test('Should render completed list', () => {
         votes = {votes}
     />
     );
-    // let percetage = getPercentage(votes,'like');
     const todoElemnt = screen.getByTestId('list-1');
     expect(todoElemnt).toBeInTheDocument();
-    // expect(todoElemnt).toHaveTextContent('Damian Torres');
-    // expect(todoElemnt).toHaveTextContent(`${percetage.positive}%`);
-    // expect(todoElemnt).toHaveTextContent(`${percetage.negative}%`);
+    expect(todoElemnt).toHaveTextContent('Damian Torres');
+    expect(todoElemnt).toHaveTextContent('10 months ago in environment');
 });
 

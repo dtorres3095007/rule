@@ -1,6 +1,5 @@
 import { render, screen, cleanup} from '@testing-library/react'
 import Card from './Card'
-import {getPercentage} from '../assets/js/General'
 import kanye_card from '../assets/img/kanye_card.png'
 
 afterEach(()=> {
@@ -35,10 +34,8 @@ test('Should render completed Card', () => {
         votes = {votes}
     />
     );
-    // let percetage = getPercentage(votes,'like');
     const todoElemnt = screen.getByTestId('card-1');
     expect(todoElemnt).toBeInTheDocument();
-    // expect(todoElemnt).toHaveTextContent('Damian Torres');
-    // expect(todoElemnt).toHaveTextContent(`${percetage.positive}%`);
-    // expect(todoElemnt).toHaveTextContent(`${percetage.negative}%`);
+    expect(todoElemnt).toHaveTextContent('Damian Torres');
+    expect(todoElemnt).toHaveTextContent('10 months ago in environment');
 });
