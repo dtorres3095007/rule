@@ -23,8 +23,8 @@ export function celebrities (){
                 "picture_card": kanye_card,
                 "lastUpdated": "2020-03-10T23:08:57.892Z",
                 "votes": {
-                    "positive": 23,
-                    "negative": 36
+                    "positive": 50,
+                    "negative": 50
                 }
             },
             {
@@ -36,8 +36,8 @@ export function celebrities (){
                 "picture_card": mark_card,
                 "lastUpdated": "2021-02-14T23:10:19.134Z",
                 "votes": {
-                    "positive": 22,
-                    "negative": 22
+                    "positive": 40,
+                    "negative": 60
                 }
             },
             {
@@ -49,8 +49,8 @@ export function celebrities (){
                 "picture_card": cristina_card,
                 "lastUpdated": "2020-12-10T23:41:07.120Z",
                 "votes": {
-                    "positive": 45,
-                    "negative": 97
+                    "positive": 30,
+                    "negative": 70
                 }
             },
             {
@@ -62,8 +62,8 @@ export function celebrities (){
                 "picture_card": malala_card,
                 "lastUpdated": "2020-12-10T23:41:07.120Z",
                 "votes": {
-                    "positive": 18,
-                    "negative": 3
+                    "positive": 20,
+                    "negative": 20
                 }
             },
             {
@@ -75,8 +75,8 @@ export function celebrities (){
                 "picture_card": elon_card,
                 "lastUpdated": "2020-12-20T23:43:38.041Z",
                 "votes": {
-                    "positive": 1237,
-                    "negative": 894
+                    "positive": 10,
+                    "negative": 20
                 }
             },
             {
@@ -88,7 +88,7 @@ export function celebrities (){
                 "picture_card": greta_card,
                 "lastUpdated": "2021-02-26T23:44:50.326Z",
                 "votes": {
-                    "positive": 118,
+                    "positive": 10,
                     "negative": 45
                 }
             }

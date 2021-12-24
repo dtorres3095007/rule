@@ -16,6 +16,7 @@ $map: (
     .cols-percentage-#{$i}{
         width: $i * 1%;
         float: left;
+        transition: width 500ms ease;
 
     }
 }
